@@ -1,0 +1,20 @@
+{
+  "name": "djs-fun-v12",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NidhishG/djs-fun-v12.git"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord-buttons": "^4.0.0",
+    "discord.js": "^12.5.3"
+  }
+}
