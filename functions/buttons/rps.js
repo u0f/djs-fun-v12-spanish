@@ -53,11 +53,11 @@ async function wyr(message, options={}){
           b.reply.defer()
           if(b.id === 'rps1'){
              if(res.rps === 'Scissors'){
-                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Rock\``, row1)
+                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Piedra\``, row1)
             } else if(res.rps === 'Rock'){
                 m.edit(`Empate! Los dos hemos elegido ${res.rps}`, row1)
               } else if(res.rps === 'Paper'){
-                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Rock\``, row1)
+                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Piedra\``, row1)
             }
               collector.stop()
 
@@ -65,9 +65,9 @@ async function wyr(message, options={}){
             if(res.rps === 'Paper'){
                 m.edit(`Empate! Los dos hemos elegido ${res.rps}`, row1)
             } else if(res.rps === 'Scissors'){
-                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Paper\``, row1)
+                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Papel\``, row1)
             } else if(res.rps === 'Rock') {
-                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Paper\``, row1)
+                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Papel\``, row1)
             }
             collector.stop()
 
@@ -75,9 +75,9 @@ async function wyr(message, options={}){
             if(res.rps === 'Scissors'){
                 m.edit(`Empate! Los dos hemos elegido \`${res.rps}\``, row1)
             } else if(res.rps === 'Rock'){
-                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Scissors\``, row1)
+                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Tijeras\``, row1)
             } else if(res.rps === 'Paper') {
-                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Scissors\``, row1)
+                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Tijeras\``, row1)
             }
             collector.stop()
         }

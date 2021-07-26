@@ -1,6 +1,6 @@
 {
   "name": "djs-fun-v12-spanish",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "Un package divertido para [Discord.js-v12](https://discord.js.org)",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 async function coinflip(message, options = {}) {
 const { MessageActionRow, MessageButton } = require('discord-buttons')
-const choice = ['heads', 'tails']  
+const choice = ['cara', 'cruz']  
 const rand = choice[Math.floor(Math.random() * choice.length)];
 
 const button = new MessageButton()
@@ -37,14 +37,14 @@ await message.channel.send(options.startMessage || `:coin: La moneda está en el
  collector.on("collect", async b =>{
      b.reply.defer()
      if(b.id === 'cf1'){
-        if(rand === 'heads'){
-            m.edit(`Has ganado! La moneda cayó en \`heads\`.`, row2)
+        if(rand === 'cara'){
+            m.edit(`Has ganado! La moneda cayó en \`cara\`.`, row2)
         } else {
             m.edit(`Has perdido, la moneda cayó en \`${rand}\`.`, row2)
         }
      } else if(b.id === 'cf2'){
-         if(rand === 'tails'){
-             m.edit(`Has ganado! La moneda cayó en \`tails\`.`, row2)
+         if(rand === 'cruz'){
+             m.edit(`Has ganado! La moneda cayó en \`cruz\`.`, row2)
          } else {
              m.edit(`as perdido, la moneda cayó en \`${rand}\`.`, row2)
          }
