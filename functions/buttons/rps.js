@@ -2,7 +2,7 @@ const axios = require('axios')
 const { MessageButton, MessageActionRow } = require('discord-buttons')
 
 async function wyr(message, options={}){
-    if(!message) throw new Error('djs-fun => Please add "message" param to rps function')
+    if(!message) throw new Error('djs-fun => Porfavor añade el parámetro "message" para la función de rps')
     const body = await axios.get('https://www.zirobot.xyz/rps')
     const res = body.data
     const button = new MessageButton()
@@ -43,7 +43,7 @@ async function wyr(message, options={}){
     let row1 = new MessageActionRow()
     .addComponents(button3, button4, button5);
 
-      message.channel.send(options.startMessage || 'Rock Paper Scissors! \nHit a button below for your choice.', row).then(async m =>{
+      message.channel.send(options.startMessage || 'Piedra Papel o Tijeras! \nPresiona un botón para hacer tu elección.', row).then(async m =>{
       const filter = (mes) => mes.clicker.user.id === message.author.id;
       const collector = m.createButtonCollector(filter);
 
@@ -53,31 +53,31 @@ async function wyr(message, options={}){
           b.reply.defer()
           if(b.id === 'rps1'){
              if(res.rps === 'Scissors'){
-                m.edit(`You win! I choose \`${res.rps}\` and you choose \`Rock\``, row1)
+                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Rock\``, row1)
             } else if(res.rps === 'Rock'){
-                m.edit(`Its a tie! We both picked ${res.rps}`, row1)
+                m.edit(`Empate! Los dos hemos elegido ${res.rps}`, row1)
               } else if(res.rps === 'Paper'){
-                m.edit(`I win! I choose \`${res.rps}\` and you choose \`Rock\``, row1)
+                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Rock\``, row1)
             }
               collector.stop()
 
           } else if(b.id === 'rps2'){
             if(res.rps === 'Paper'){
-                m.edit(`Its a tie! We both picked ${res.rps}`, row1)
+                m.edit(`Empate! Los dos hemos elegido ${res.rps}`, row1)
             } else if(res.rps === 'Scissors'){
-                m.edit(`I win! I choose \`${res.rps}\` and you choose \`Paper\``, row1)
+                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Paper\``, row1)
             } else if(res.rps === 'Rock') {
-                m.edit(`You win! I choose \`${res.rps}\` and you choose \`Paper\``, row1)
+                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Paper\``, row1)
             }
             collector.stop()
 
         } else if(b.id === 'rps3'){
             if(res.rps === 'Scissors'){
-                m.edit(`Its a tie! We both picked \`${res.rps}\``, row1)
+                m.edit(`Empate! Los dos hemos elegido \`${res.rps}\``, row1)
             } else if(res.rps === 'Rock'){
-                m.edit(`I win! I choose \`${res.rps}\` and you choose \`Scissors\``, row1)
+                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Scissors\``, row1)
             } else if(res.rps === 'Paper') {
-                m.edit(`You win! I choose \`${res.rps}\` and you choose \`Scissors\``, row1)
+                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Scissors\``, row1)
             }
             collector.stop()
         }

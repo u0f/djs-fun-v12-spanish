@@ -8,20 +8,20 @@ async function gtp(message, options = {}){
     const res = body.data
 
     const correct = new Discord.MessageEmbed()
-    .setTitle('Correct!')
-    .setDescription(`You guessed the correct pokemon, \`${res.data.name}\``)
+    .setTitle('Correcto!')
+    .setDescription(`Adivinaste el Pokemon correctamente, \`${res.data.name}\``)
     .setImage(res.data.ShowImage) 
     .setColor("GREEN")
         
     const start = new Discord.MessageEmbed()
-    .setTitle('Guess The Pokemon!')
-    .setDescription(`Hit a button below for what you think the pokemon is. \n \n **Abilities:** \n \`${res.data.abilities}\` \n\n **Type:** \n \`${res.data.types}\``)
+    .setTitle('Adivina el Pokémon!')
+    .setDescription(`Presiona un botón para ver el Pokemon que crees que es. \n \n **Habilidades:** \n \`${res.data.abilities}\` \n\n **Tipo:** \n \`${res.data.types}\``)
     .setImage(res.data.HiddenImage)
     .setColor('ff0000')
 
     const wrong = new Discord.MessageEmbed()
-    .setTitle('Wrong!')
-    .setDescription(`You guessed the wrog pokemon, the correct pokemon was \`${res.data.name}\`.`)
+    .setTitle('Error!')
+    .setDescription(`Ese no era el Pokemon! El Pokemon correcto era \`${res.data.name}\`.`)
     .setImage(res.data.ShowImage)
     .setColor('ff0000')
 

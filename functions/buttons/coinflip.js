@@ -5,23 +5,23 @@ const rand = choice[Math.floor(Math.random() * choice.length)];
 
 const button = new MessageButton()
 .setStyle(options.headsColor || 'red')
-.setLabel('Heads')
+.setLabel('Cara')
 .setID('cf1')
 
 const button2 = new MessageButton()
 .setStyle(options.tailsColor ||'blurple')
-.setLabel('Tails')
+.setLabel('Cruz')
 .setID('cf2') 
 
  const button3 = new MessageButton()
 .setStyle(options.headsColor || 'red')
-.setLabel('Heads')
+.setLabel('Cara')
 .setID('cf3') 
 .setDisabled()
 
  const button4 = new MessageButton()
 .setStyle(options.tailsColor || 'blurple')
-.setLabel('Tails')
+.setLabel('Cruz')
 .setID('cf4')
 .setDisabled()
 
@@ -30,7 +30,7 @@ let row = new MessageActionRow()
 let row2 = new MessageActionRow()
 .addComponents(button3, button4);
 
-await message.channel.send(options.startMessage || `:coin: The coin is in the air... Choose heads or tails below.`, row).then(async m =>{
+await message.channel.send(options.startMessage || `:coin: La moneda está en el aire... Elije cara o cruz.`, row).then(async m =>{
  const filter = (mes) => mes.clicker.user.id === message.author.id;
  const collector = m.createButtonCollector(filter);
 
@@ -38,15 +38,15 @@ await message.channel.send(options.startMessage || `:coin: The coin is in the ai
      b.reply.defer()
      if(b.id === 'cf1'){
         if(rand === 'heads'){
-            m.edit(`You win! The coin landed on \`heads\`.`, row2)
+            m.edit(`Has ganado! La moneda cayó en \`heads\`.`, row2)
         } else {
-            m.edit(`You loose, the coin landed on \`${rand}\`.`, row2)
+            m.edit(`Has perdido, la moneda cayó en \`${rand}\`.`, row2)
         }
      } else if(b.id === 'cf2'){
          if(rand === 'tails'){
-             m.edit(`You win! The coin landed on \`tails\`.`, row2)
+             m.edit(`Has ganado! La moneda cayó en \`tails\`.`, row2)
          } else {
-             m.edit(`You loose, the coin landed on \`${rand}\`.`, row2)
+             m.edit(`as perdido, la moneda cayó en \`${rand}\`.`, row2)
          }
       }
 

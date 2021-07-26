@@ -18,7 +18,7 @@ const { MessageActionRow, MessageButton } = require('discord-buttons')
       let row = new MessageActionRow()
       .addComponents(one, two);
       msg.delete()
-      await message.channel.send("**Would you rather**", row).then(async (m) => {
+      await message.channel.send("**Que prefieres**", row).then(async (m) => {
         const filter = (mes) => mes.clicker.user.id === message.author.id;
         const collector = m.createButtonCollector(filter);
         collector.on("collect", (b) => {
@@ -40,7 +40,7 @@ const { MessageActionRow, MessageButton } = require('discord-buttons')
            .addComponents(button, button1);
  
             collector.stop();
-            m.edit(`The percentage of people who choose the Would You Rather you picked was \`${res.percentage["1"]}%\``, row);
+            m.edit(`El porcentaje de personas que eligen la opción ha sido \`${res.percentage["1"]}%\``, row);
 
           } else if (b.id === 'wyr2') {
             const button = new MessageButton()
@@ -59,7 +59,7 @@ const { MessageActionRow, MessageButton } = require('discord-buttons')
             let row = new MessageActionRow()
             .addComponents(button, button1);
 
-            m.edit(`The percentage of people who choose the Would You Rather you picked was \`${res.percentage["2"]}%\``, row);
+            m.edit(`El porcentaje de personas que eligen la opción ha sido \`${res.percentage["2"]}%\``, row);
           }
         });
       });
