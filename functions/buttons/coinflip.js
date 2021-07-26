@@ -46,7 +46,7 @@ await message.channel.send(options.startMessage || `:coin: La moneda está en el
          if(rand === 'cruz'){
              m.edit(`Has ganado! La moneda cayó en \`cruz\`.`, row2)
          } else {
-             m.edit(`as perdido, la moneda cayó en \`${rand}\`.`, row2)
+             m.edit(`Has perdido, la moneda cayó en \`${rand}\`.`, row2)
          }
       }
 

@@ -47,37 +47,41 @@ async function wyr(message, options={}){
       const filter = (mes) => mes.clicker.user.id === message.author.id;
       const collector = m.createButtonCollector(filter);
 
-      console.log(res.rps)
+      let resTranslated = {
+        "Rock": "Piedra",
+        "Paper": "Papel",
+        "Scissors": "Tijera"
+      };
 
       collector.on("collect", async b =>{
           b.reply.defer()
           if(b.id === 'rps1'){
              if(res.rps === 'Scissors'){
-                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Piedra\``, row1)
+                m.edit(`Has ganado! He elegido \`${resTranslated[res.rps]}\` y tú has escogido \`Piedra\``, row1)
             } else if(res.rps === 'Rock'){
-                m.edit(`Empate! Los dos hemos elegido ${res.rps}`, row1)
+                m.edit(`Empate! Los dos hemos elegido ${resTranslated[res.rps]}`, row1)
               } else if(res.rps === 'Paper'){
-                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Piedra\``, row1)
+                m.edit(`He ganado! He elegido \`${resTranslated[res.rps]}\` y tú has escogido \`Piedra\``, row1)
             }
               collector.stop()
 
           } else if(b.id === 'rps2'){
             if(res.rps === 'Paper'){
-                m.edit(`Empate! Los dos hemos elegido ${res.rps}`, row1)
+                m.edit(`Empate! Los dos hemos elegido ${resTranslated[res.rps]}`, row1)
             } else if(res.rps === 'Scissors'){
-                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Papel\``, row1)
+                m.edit(`He ganado! He elegido \`${resTranslated[res.rps]}\` y tú has escogido \`Papel\``, row1)
             } else if(res.rps === 'Rock') {
-                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Papel\``, row1)
+                m.edit(`Has ganado! He elegido \`${resTranslated[res.rps]}\` y tú has escogido \`Papel\``, row1)
             }
             collector.stop()
 
         } else if(b.id === 'rps3'){
             if(res.rps === 'Scissors'){
-                m.edit(`Empate! Los dos hemos elegido \`${res.rps}\``, row1)
+                m.edit(`Empate! Los dos hemos elegido \`${resTranslated[res.rps]}\``, row1)
             } else if(res.rps === 'Rock'){
-                m.edit(`He ganado! He elegido \`${res.rps}\` y tú has escogido \`Tijeras\``, row1)
+                m.edit(`He ganado! He elegido \`${resTranslated[res.rps]}\` y tú has escogido \`Tijeras\``, row1)
             } else if(res.rps === 'Paper') {
-                m.edit(`Has ganado! He elegido \`${res.rps}\` y tú has escogido \`Tijeras\``, row1)
+                m.edit(`Has ganado! He elegido \`${resTranslated[res.rps]}\` y tú has escogido \`Tijeras\``, row1)
             }
             collector.stop()
         }
